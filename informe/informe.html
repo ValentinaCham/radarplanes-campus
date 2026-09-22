@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Informe · RadarPlanes</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; }
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11pt;
+  color: #1a1a2e;
+  line-height: 1.5;
+  margin: 0;
+}
+h1, h2, h3, h4 { color: #0d0096; font-weight: 700; }
+h1 { font-size: 22pt; margin: 0 0 4pt; }
+h2 { font-size: 15pt; margin: 18pt 0 6pt; border-bottom: 2px solid #8083ff; padding-bottom: 4pt; }
+h3 { font-size: 12pt; margin: 12pt 0 4pt; color: #2d3449; }
+p { margin: 4pt 0; text-align: justify; }
+ul, ol { margin: 4pt 0 8pt 18pt; padding: 0; }
+li { margin: 2pt 0; }
+
+.cover {
+  text-align: center;
+  padding: 40pt 0;
+  background: linear-gradient(135deg, #0b1326 0%, #222a3d 100%);
+  color: white;
+  border-radius: 12pt;
+  margin-bottom: 18pt;
+}
+.cover h1 { color: #40efb7; font-size: 30pt; margin-bottom: 8pt; }
+.cover h2 { color: #c0c1ff; font-size: 16pt; border: none; margin: 6pt 0; }
+.cover p { font-size: 11pt; opacity: 0.85; }
+
+.meta {
+  background: #f3f4ff;
+  border-left: 4px solid #8083ff;
+  padding: 8pt 14pt;
+  border-radius: 4pt;
+  font-size: 10.5pt;
+}
+.meta b { color: #0d0096; }
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8pt;
+  margin: 12pt 0;
+}
+.kpi {
+  background: #0b1326;
+  color: white;
+  padding: 10pt;
+  border-radius: 8pt;
+  text-align: center;
+}
+.kpi b { display: block; font-size: 18pt; color: #40efb7; font-family: 'Helvetica Neue', sans-serif; }
+.kpi span { font-size: 9pt; opacity: 0.8; }
+
+.screenshot {
+  width: 100%;
+  max-height: 480pt;
+  object-fit: contain;
+  border: 1px solid #c7c4d7;
+  border-radius: 10pt;
+  margin: 8pt 0 16pt;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+.screenshot-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10pt;
+  margin: 8pt 0 16pt;
+}
+.screenshot-row .screenshot { margin: 0; }
+.screenshot-cap { font-size: 9.5pt; color: #464554; text-align: center; margin-top: -10pt; margin-bottom: 12pt; }
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8pt;
+  margin: 8pt 0;
+}
+.tech {
+  background: white;
+  border: 1px solid #c7c4d7;
+  border-radius: 8pt;
+  padding: 10pt;
+}
+.tech b { color: #0d0096; display: block; margin-bottom: 4pt; }
+.tech span { font-size: 10pt; color: #464554; }
+
+.feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.feature-list li {
+  padding: 6pt 10pt;
+  margin: 4pt 0;
+  background: #f8f9ff;
+  border-left: 3px solid #40efb7;
+  border-radius: 4pt;
+  font-size: 10.5pt;
+}
+.feature-list li b { color: #0d0096; }
+
+.refs {
+  font-size: 9.5pt;
+}
+.refs li {
+  word-break: break-all;
+  margin-bottom: 4pt;
+}
+.refs a { color: #494bd6; text-decoration: none; }
+
+.page-break { page-break-before: always; height: 0; }
+
+img.screenshot { page-break-inside: avoid; break-inside: avoid; }
+
+footer {
+  margin-top: 20pt;
+  padding-top: 8pt;
+  border-top: 1px solid #c7c4d7;
+  font-size: 9pt;
+  color: #464554;
+  text-align: center;
+}
+
+@media print {
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============== COVER ============== -->
+<section class="cover">
+  <h1>RadarPlanes</h1>
+  <h2>Hyperlocal Campus Express</h2>
+  <p style="margin-top: 18pt;">Aplicación web mobile-first para descubrir, crear y unirse a planes universitarios en vivo</p>
+  <p style="margin-top: 8pt;"><b>Universidad [Confidencial]</b> · Laboratorio 03 · Programación Web / Móvil</p>
+</section>
+
+<!-- ============== 1 · INTEGRANTES ============== -->
+<h2>1. Integrantes</h2>
+<table style="width:100%; border-collapse: collapse; margin: 8pt 0;">
+<tr><td style="padding:6pt;border:1px solid #c7c4d7;width:30%;background:#f3f4ff;"><b>Apellidos y Nombres</b></td><td style="padding:6pt;border:1px solid #c7c4d7;">Valentina Chamorro [a completar por el estudiante]</td></tr>
+<tr><td style="padding:6pt;border:1px solid #c7c4d7;background:#f3f4ff;"><b>Código</b></td><td style="padding:6pt;border:1px solid #c7c4d7;">[a completar]</td></tr>
+<tr><td style="padding:6pt;border:1px solid #c7c4d7;background:#f3f4ff;"><b>Ciclo</b></td><td style="padding:6pt;border:1px solid #c7c4d7;">2026-2</td></tr>
+<tr><td style="padding:6pt;border:1px solid #c7c4d7;background:#f3f4ff;"><b>Curso</b></td><td style="padding:6pt;border:1px solid #c7c4d7;">Programación Web / Móvil · Laboratorio 03</td></tr>
+<tr><td style="padding:6pt;border:1px solid #c7c4d7;background:#f3f4ff;"><b>Docente</b></td><td style="padding:6pt;border:1px solid #c7c4d7;">[a completar]</td></tr>
+<tr><td style="padding:6pt;border:1px solid #c7c4d7;background:#f3f4ff;"><b>Fecha de entrega</b></td><td style="padding:6pt;border:1px solid #c7c4d7;">22 de setiembre de 2026</td></tr>
+</table>
+
+<!-- ============== 2 · OBJETIVO ============== -->
+<h2>2. Objetivo de la aplicación</h2>
+<p>
+Desarrollar una aplicación web local, <b>responsive y mobile-first</b>, que sirva como
+una <b>red social universitaria hiperlocal</b>: una "vista de radar" del campus donde los
+estudiantes pueden descubrir, crear y unirse a planes en vivo (pichangas, mesas de cartas,
+previas, grupos de estudio) que ocurren en los próximos minutos dentro de un radio de
+500 m a 5 km alrededor del campus.
+</p>
+<p>
+El objetivo técnico es aplicar de forma práctica conceptos de <b>desarrollo web móvil</b>
+y multiplataforma: layout adaptativo (mobile-first CSS), interacciones táctiles, SPA
+con hash-routing, persistencia local en el navegador y bundling moderno con Vite — todo
+sin frameworks de UI pesados.
+</p>
+
+<div class="kpis">
+  <div class="kpi"><b>5</b><span>vistas SPA</span></div>
+  <div class="kpi"><b>0</b><span>frameworks de UI</span></div>
+  <div class="kpi"><b>≈17 kB</b><span>JS gzip total</span></div>
+  <div class="kpi"><b>100%</b><span>responsive</span></div>
+</div>
+
+<!-- ============== 3 · TECNOLOGÍAS ============== -->
+<h2>3. Tecnologías utilizadas</h2>
+
+<div class="tech-grid">
+  <div class="tech">
+    <b>HTML5</b>
+    <span>Semántica moderna (&lt;main&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;article&gt;) con meta viewport y safe-area-inset para notched devices.</span>
+  </div>
+  <div class="tech">
+    <b>CSS3</b>
+    <span>Variables (design system), flex/grid, container queries, dvh, animaciones @keyframes, scroll-snap, backdrop-filter, gradient mesh.</span>
+  </div>
+  <div class="tech">
+    <b>JavaScript ES2020+</b>
+    <span>Módulos nativos, DOM nativo (createElement), async/await, Map/Set, optional chaining, localStorage/sessionStorage, sin bundlers runtime.</span>
+  </div>
+  <div class="tech">
+    <b>Vite 5</b>
+    <span>Bundler y dev-server con HMR. Build de producción con code-splitting automático y tree-shaking. Deploy estático (≈17 kB gzip).</span>
+  </div>
+  <div class="tech">
+    <b>Git + GitHub</b>
+    <span>Control de versiones con commits semánticos. Repositorio público en github.com/ValentinaCham/radarplanes-campus. GitHub Actions para Pages.</span>
+  </div>
+  <div class="tech">
+    <b>Material Symbols · Inter</b>
+    <span>Iconografía vectorial y tipografía variable cargadas vía Google Fonts CDN.</span>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== 4 · DESCRIPCIÓN DE LA SOLUCIÓN ============== -->
+<h2>4. Descripción breve de la solución</h2>
+
+<h3>4.1. Arquitectura general</h3>
+<p>
+La aplicación es una <b>SPA (Single-Page Application)</b> construida íntegramente en
+JavaScript vanilla. Al cargar, <code>main.js</code> monta el shell (top header + bottom
+nav) y pinta la vista actual. Un mini router basado en <code>location.hash</code>
+permite navegar entre las 5 vistas sin recargar la página, manteniendo la URL
+compartible y el botón "atrás" del navegador funcional.
+</p>
+
+<h3>4.2. Las cinco vistas</h3>
+<ol>
+  <li><b>Radar en vivo</b> (<code>/#radar</code>) — mapa del campus con pines animados, selector de radio (500 m, 1 km, 3 km, 5 km), filtros por categoría (pichanga, cartas, fiesta, estudio) y un feed de tarjetas ordenable por distancia o urgencia.</li>
+  <li><b>Lanzar Plan Express</b> (<code>/#lanzar</code>) — formulario con contador de caracteres en vivo (0/60), sugerencias automáticas, selector visual de categoría con iconos emoji, stepper de cupos (2-20) y switch de visibilidad.</li>
+  <li><b>Mis Planes</b> (<code>/#mis-planes</code>) — pestañas <i>Creados / Me Sumé</i> con gestión en tiempo real: aumentar/disminuir cupos, pausar plan, modal de confirmación de cancelación.</li>
+  <li><b>Ficha · Cómo llegar</b> (<code>/?plan=plan-1#radar</code>) — vista de detalle con hero gradient, organizador verificado con rating, ruta GPS animada en SVG y CTA RSVP que modifica cupos.</li>
+  <li><b>Comunidad &amp; Campus Seguro</b> (<code>/#comunidad</code>) — radio de proximidad, alerta exprés de pichangas (toggle), Protocolo Safe Student, perfil universitario SSO y créditos.</li>
+</ol>
+
+<h3>4.3. Estado y persistencia</h3>
+<p>
+Toda la información dinámica vive en una clase <code>PlanStore</code> (<code>src/views/radar.js</code>)
+que serializa automáticamente a <code>localStorage</code>: planes creados, cupos, radio,
+ordenamiento, categoría activa y estado del toggle de alertas. El saludo inicial se
+gestiona con <code>sessionStorage</code> para evitar repetirlo en la misma sesión.
+</p>
+
+<h3>4.4. Diseño mobile-first</h3>
+<p>
+La maqueta base está pensada para <b>390 × 844 px (iPhone 12)</b>. En pantallas ≥ 900 px
+se aplica un patrón <i>phone-frame</i>: el contenido se centra en un marco de 540 px con
+un fondo radial-gradient, simulando un dispositivo móvil sobre un escritorio. La
+bottom-nav permanece fija en mobile y se oculta al entrar a una ficha para maximizar
+el área de lectura.
+</p>
+
+<h3>4.5. Diseño visual</h3>
+<p>
+Se adoptó un <b>dark-mode Material 3</b> con paleta personalizada: primary lila
+(<code>#8083ff</code>), secondary verde menta (<code>#40efb7</code>), tertiary ámbar
+(<code>#ffb95f</code>) sobre fondo <code>#0b1326</code>. La jerarquía se construye con
+radios consistentes (10/14/18/24 px), sombras suaves con tinte del color principal y
+microinteracciones (pulse, ping, spin en radar y badges "EN VIVO").
+</p>
+
+<div class="page-break"></div>
+
+<!-- ============== 5 · CAPTURAS ============== -->
+<h2>5. Capturas de pantalla</h2>
+
+<h3>5.1. Vistas mobile (390 × 844 / 1700)</h3>
+
+<p class="screenshot-cap"><b>Vista 1 · Radar en vivo</b> — Mapa del campus con pines, selector de radio y feed de tarjetas ordenable.</p>
+<img src="../screenshots/01-radar-mobile.png" class="screenshot">
+
+<p class="screenshot-cap"><b>Vista 3 · Lanzar Plan Express</b> — Formulario completo con sugerencias, selector de categoría, stepper de cupos.</p>
+<img src="../screenshots/03-lanzar-mobile.png" class="screenshot">
+
+<div class="page-break"></div>
+
+<p class="screenshot-cap"><b>Vista 4 · Mis Planes</b> — Gestión en tiempo real con tabs Creados / Me Sumé y stepper de cupos.</p>
+<img src="../screenshots/04-misplanes-mobile.png" class="screenshot">
+
+<p class="screenshot-cap"><b>Vista 5 · Comunidad &amp; Campus Seguro</b> — Radio de proximidad, alertas, perfil universitario.</p>
+<img src="../screenshots/05-comunidad-mobile.png" class="screenshot">
+
+<div class="page-break"></div>
+
+<p class="screenshot-cap"><b>Vista 2 · Ficha / Cómo llegar</b> — Detalle del plan con organizador verificado y ruta GPS en SVG.</p>
+<img src="../screenshots/02-detail-mobile.png" class="screenshot">
+
+<h3>5.2. Vista desktop (1280 × 800)</h3>
+
+<div class="screenshot-row">
+  <div>
+    <img src="../screenshots/06-radar-desktop.png" class="screenshot">
+    <p class="screenshot-cap">Patrón phone-frame centrado · 540 px de ancho.</p>
+  </div>
+</div>
+
+<!-- ============== 6 · CONCLUSIONES ============== -->
+<h2>6. Conclusiones</h2>
+
+<ul class="feature-list">
+  <li><b>Mobile-first funciona.</b> Construir la interfaz pensando en una pantalla de 390 × 844 px obligó a priorizar el contenido esencial y aplicar overflow-x: hidden, min-width: 0 y flex-wrap correctamente, evitando luego costosos refactors.</li>
+  <li><b>Vite + vanilla JS es una combinación potente y ligera.</b> El bundle final de producción pesa 17 kB JS + 18 kB CSS (gzip), comparable o inferior al de muchos sitios que usan frameworks pesados. Sin React, sin Vue: solo DOM nativo, módulos ES y HMR.</li>
+  <li><b>El diseño responsive se logra con CSS moderno.</b> El patrón <i>phone-frame</i> (centrar el contenido en un marco de 540 px sobre un escritorio) ofrece una experiencia mobile-first incluso en desktop, sin escribir media queries adicionales — basta con max-width y margin: auto.</li>
+  <li><b>La persistencia con localStorage da una experiencia realista.</b> Los planes creados, los cupos y los ajustes del usuario sobreviven a recargas, demostrando el ciclo de vida completo de un mini-CRUD sin necesidad de backend.</li>
+  <li><b>El router por hash es simple y suficiente.</b> Para una SPA pequeña con pocas vistas, no se necesita React Router ni Vue Router: <code>window.location.hash</code> + un listener de <code>hashchange</code> cubren el 100% del caso.</li>
+  <li><b>Material Symbols + Google Fonts carga rápido.</b> Con &lt;link rel="preconnect"&gt; el FCP mejora notablemente y la iconografía es coherente sin requerir assets SVG por ícono.</li>
+  <li><b>El testing visual con Puppeteer es indispensable.</b> Las capturas con device emulation (DPR 2, isMobile: true) permitieron detectar overflows y problemas de wrapping que solo aparecen a escala real en un dispositivo.</li>
+</ul>
+
+<p>
+El proyecto cumple con los cinco requisitos del laboratorio:
+</p>
+<ol>
+  <li>✅ <b>5 vistas/secciones</b> — Radar, Lanzar, Mis Planes, Ficha, Comunidad.</li>
+  <li>✅ <b>JS dinámico</b> — generación de tarjetas, conteo de cupos, filtros, ordenamiento, modal, toast, persistencia.</li>
+  <li>✅ <b>Resultados en tarjetas/listas</b> — feed de planes, lista de planes propios, lista de tips de seguridad.</li>
+  <li>✅ <b>Responsive</b> — mobile-first + phone-frame en desktop, verificado en iPhone 12 (390 × 844) y 1280 × 800.</li>
+  <li>✅ <b>Repositorio en GitHub</b> — <a href="https://github.com/ValentinaCham/radarplanes-campus" class="refs">github.com/ValentinaCham/radarplanes-campus</a> con README, instrucciones de ejecución y deploy automático vía GitHub Actions a GitHub Pages.</li>
+</ol>
+
+<!-- ============== 7 · REFERENCIAS ============== -->
+<h2>7. Referencias</h2>
+<ol class="refs">
+  <li>MDN Web Docs. <i>Mobile-first Responsive Design</i>. <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Responsive/Mobile_first">https://developer.mozilla.org/.../Mobile_first</a></li>
+  <li>Vite.js. <i>Getting Started — Features &amp; Guides</i>. <a href="https://vitejs.dev/guide/">https://vitejs.dev/guide/</a></li>
+  <li>Google Material Design. <i>Material Design 3 — Color System &amp; Tokens</i>. <a href="https://m3.material.io/styles/color/the-color-system/tokens">https://m3.material.io/.../tokens</a></li>
+  <li>Google Fonts. <i>Material Symbols &amp; Icons</i>. <a href="https://fonts.google.com/icons">https://fonts.google.com/icons</a></li>
+  <li>W3C. <i>CSS Custom Properties for Cascading Variables — Level 1</i>. <a href="https://www.w3.org/TR/css-variables-1/">https://www.w3.org/TR/css-variables-1/</a></li>
+  <li>W3C. <i>CSS Flexible Box Layout Module — Level 1</i>. <a href="https://www.w3.org/TR/css-flexbox-1/">https://www.w3.org/TR/css-flexbox-1/</a></li>
+  <li>Puppeteer. <i>Device emulation for screenshots</i>. <a href="https://pptr.dev/guides/device-emulation">https://pptr.dev/guides/device-emulation</a></li>
+  <li>GitHub Docs. <i>GitHub Actions — Deploying a static site to GitHub Pages</i>. <a href="https://docs.github.com/en/pages">https://docs.github.com/en/pages</a></li>
+  <li>javascript.info. <i>LocalStorage, sessionStorage</i>. <a href="https://javascript.info/localstorage">https://javascript.info/localstorage</a></li>
+  <li>CSS-Tricks. <i>A Complete Guide to CSS Grid</i>. <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">https://css-tricks.com/.../complete-guide-grid/</a></li>
+</ol>
+
+<footer>
+  <p>RadarPlanes · Hyperlocal Campus Express · Universidad 2026-2 · Laboratorio 03</p>
+  <p>Repositorio: <a href="https://github.com/ValentinaCham/radarplanes-campus">github.com/ValentinaCham/radarplanes-campus</a></p>
+</footer>
+
+</body>
+</html>
